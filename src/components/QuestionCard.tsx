@@ -2,16 +2,16 @@ import React from "react";
 
 type Properties = {
     question: string;
-    answer: string[];
+    answers: string[];
     callback: any;
-    userAnswer: string;
+    userAnswer: any;
     questionNr: number;
     totalQuestions: number;
 }
 
 const QuestionCard: React.FC<Properties> = ({
     question,
-    answer,
+    answers,
     callback,
     userAnswer,
     questionNr,
@@ -22,6 +22,15 @@ const QuestionCard: React.FC<Properties> = ({
         Question: {questionNr} / {totalQuestions}
       </p>  
       <p dangerouslySetInnerHTML={{ __html: question}}/>
+      <div>
+        {answers.map(answers => 
+            <div>
+               <button disabled={userAnswer} onClick={callback}>
+                 <span dangerouslySetInnerHTML={{ __html: answers}} />
+               </button>
+            </div>
+        )}
+      </div>
     </div>
 );
 
