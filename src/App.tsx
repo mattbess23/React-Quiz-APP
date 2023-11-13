@@ -24,7 +24,9 @@ const  App = () => {
 
   console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY))
 
-  const startTrivia = async () => {};
+  const startTrivia = async () => {
+     
+  };
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {};
 
